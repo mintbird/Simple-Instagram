@@ -11,11 +11,11 @@ require_once( SI_PLUGIN_DIR . '/inc/class-simple-instagram.php' );
 
 class SI_Feed_Widget extends WP_Widget {
 
-    public function SI_Feed_Widget() {
+    public function __construct() {
         $widget_ops  = array( 'classname' => 'si_feed_widget', 'description' => __( 'A widget to display your Instagram Feed', 'si_feed' ) );
         $control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'si_feed_widget' );
         
-        $this->WP_Widget( 'si_feed_widget', __( 'Simple Instagram Feed Widget', 'si_feed' ), $widget_ops, $control_ops );
+       parent::__construct( 'si_feed_widget', __( 'Simple Instagram Feed Widget', 'si_feed' ), $widget_ops, $control_ops );
     }
 
     public function widget( $args, $instance ) {

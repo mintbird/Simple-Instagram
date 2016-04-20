@@ -11,11 +11,11 @@ require_once( SI_PLUGIN_DIR . '/inc/class-simple-instagram.php' );
 
 class SI_Popular_Widget extends WP_Widget {
 
-    public function SI_Popular_Widget() {
+    public function __construct() {
         $widget_ops  = array( 'classname' => 'si_popular_widget', 'description' => __( 'A widget to display popular Instagram Images', 'si_popular' ) );
         $control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'si_popular_widget' );
         
-        $this->WP_Widget( 'si_popular_widget', __( 'Simple Instagram Popular Widget', 'si_popular' ), $widget_ops, $control_ops );
+        parent::__construct( 'si_popular_widget', __( 'Simple Instagram Popular Widget', 'si_popular' ), $widget_ops, $control_ops );
     }
 
     public function widget( $args, $instance ) {

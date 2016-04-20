@@ -9,11 +9,11 @@
  */
 class SI_Tag_Widget extends WP_Widget {
 
-    public function SI_Tag_Widget() {
+    public function __construct() {
         $widget_ops  = array( 'classname' => 'si_tag_widget', 'description' => __( 'A widget to display an Instagram Feed by Tag', 'si_feed' ) );
         $control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'si_tag_widget' );
 
-        $this->WP_Widget( 'si_tag_widget', __( 'Simple Instagram Tag Widget', 'si_tag' ), $widget_ops, $control_ops );
+        parent::__construct( 'si_tag_widget', __( 'Simple Instagram Tag Widget', 'si_tag' ), $widget_ops, $control_ops );
     }
 
     public function widget( $args, $instance ) {

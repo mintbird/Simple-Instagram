@@ -11,11 +11,11 @@ require_once( SI_PLUGIN_DIR . '/inc/class-simple-instagram.php' );
 
 class SI_Profile_Widget extends WP_Widget {
 
-    function SI_Profile_Widget() {
+    function __construct() {
         $widget_ops  = array( 'classname' => 'si_profile_widget', 'description' => __( 'A widget to display your Instagram Profile', 'si_profile' ) );
         $control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'si_profile_widget' );
 
-        $this->WP_Widget( 'si_profile_widget', __( 'Simple Instagram Profile Widget', 'si_profile' ), $widget_ops, $control_ops );
+        parent::__construct( 'si_profile_widget', __( 'Simple Instagram Profile Widget', 'si_profile' ), $widget_ops, $control_ops );
     }
 
     function widget( $args, $instance ) {
